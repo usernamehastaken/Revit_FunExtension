@@ -1,0 +1,6 @@
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\bin\Debug\Revit_FunExtension.dll
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\bin\Debug\Revit_FunExtension.pdb
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.csprojAssemblyReference.cache
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.csproj.CoreCompileInputs.cache
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.dll
+C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.pdb
