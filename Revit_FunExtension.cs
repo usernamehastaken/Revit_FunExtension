@@ -24,6 +24,7 @@ namespace Revit_FunExtension
         
         public void n()
         {
+            int init1 = 0;
             
         }
     }
