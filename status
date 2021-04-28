@@ -1,0 +1,81 @@
+[1mdiff --git a/.vs/Revit_FunExtension/v16/.suo b/.vs/Revit_FunExtension/v16/.suo[m
+[1mindex 1d05d3f..894f4e8 100644[m
+Binary files a/.vs/Revit_FunExtension/v16/.suo and b/.vs/Revit_FunExtension/v16/.suo differ
+[1mdiff --git a/Revit_FunExtension.cs b/Revit_FunExtension.cs[m
+[1mindex 2af3674..f229e64 100644[m
+[1m--- a/Revit_FunExtension.cs[m
+[1m+++ b/Revit_FunExtension.cs[m
+[36m@@ -23,44 +23,5 @@[m [mnamespace Revit_FunExtension[m
+             transaction.Commit();[m
+         }[m
+         [m
+[31m-        public static void SetParametersToElement(ElementId elementId)[m
+[31m-        {[m
+[31m-            [m
+[31m-        }[m
+[31m-[m
+[31m-        public static bool SetNewParameterToInstanceWall(UIApplication app, DefinitionFile myDefinitionFile)[m
+[31m-        {[m
+[31m-            // create a new group in the shared parameters file[m
+[31m-            DefinitionGroups myGroups = myDefinitionFile.Groups;[m
+[31m-            DefinitionGroup myGroup = myGroups.Create("MyParameters1");[m
+[31m-[m
+[31m-            // create an instance definition in definition group MyParameters[m
+[31m-            ExternalDefinitionCreationOptions option = new ExternalDefinitionCreationOptions("Instance_ProductDate", ParameterType.Text);[m
+[31m-            // Don't let the user modify the value, only the API[m
+[31m-            option.UserModifiable = false;[m
+[31m-            // Set tooltip[m
+[31m-            option.Description = "Wall product date";[m
+[31m-            Definition myDefinition_ProductDate = myGroup.Definitions.Create(option);[m
+[31m-[m
+[31m-            // create a category set and insert category of wall to it[m
+[31m-            CategorySet myCategories = app.Application.Create.NewCategorySet();[m
+[31m-            // use BuiltInCategory to get category of wall[m
+[31m-            Category myCategory = Category.GetCategory(app.ActiveUIDocument.Document, BuiltInCategory.OST_Walls);[m
+[31m-[m
+[31m-[m
+[31m-            myCategories.Insert(myCategory);[m
+[31m-[m
+[31m-            //Create an instance of InstanceBinding[m
+[31m-            InstanceBinding instanceBinding = app.Application.Create.NewInstanceBinding(myCategories);[m
+[31m-[m
+[31m-            // Get the BingdingMap of current document.[m
+[31m-            BindingMap bindingMap = app.ActiveUIDocument.Document.ParameterBindings;[m
+[31m-[m
+[31m-            // Bind the definitions to the document[m
+[31m-            bool instanceBindOK = bindingMap.Insert(myDefinition_ProductDate,[m
+[31m-                                            instanceBinding, BuiltInParameterGroup.PG_TEXT);[m
+[31m-            return instanceBindOK;[m
+[31m-        }[m
+[31m-[m
+     }[m
+ }[m
+[1mdiff --git a/bin/Debug/Revit_FunExtension.dll b/bin/Debug/Revit_FunExtension.dll[m
+[1mindex 319090e..4681151 100644[m
+Binary files a/bin/Debug/Revit_FunExtension.dll and b/bin/Debug/Revit_FunExtension.dll differ
+[1mdiff --git a/bin/Debug/Revit_FunExtension.pdb b/bin/Debug/Revit_FunExtension.pdb[m
+[1mindex dd4f8a3..3c3180d 100644[m
+Binary files a/bin/Debug/Revit_FunExtension.pdb and b/bin/Debug/Revit_FunExtension.pdb differ
+[1mdiff --git a/obj/Debug/Revit_FunExtension.csproj.FileListAbsolute.txt b/obj/Debug/Revit_FunExtension.csproj.FileListAbsolute.txt[m
+[1mindex 81c1268..ded9a64 100644[m
+[1m--- a/obj/Debug/Revit_FunExtension.csproj.FileListAbsolute.txt[m
+[1m+++ b/obj/Debug/Revit_FunExtension.csproj.FileListAbsolute.txt[m
+[36m@@ -4,3 +4,9 @@[m [mC:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_Fun[m
+ C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.csproj.CoreCompileInputs.cache[m
+ C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.dll[m
+ C:\Users\chenxinxin.TCDRILAN\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.pdb[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\bin\Debug\Revit_FunExtension.dll[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\bin\Debug\Revit_FunExtension.pdb[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.csprojAssemblyReference.cache[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.csproj.CoreCompileInputs.cache[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.dll[m
+[32m+[m[32mC:\Users\C\source\repos\Revit_FunExtension\obj\Debug\Revit_FunExtension.pdb[m
+[1mdiff --git a/obj/Debug/Revit_FunExtension.csprojAssemblyReference.cache b/obj/Debug/Revit_FunExtension.csprojAssemblyReference.cache[m
+[1mindex 18a1323..9b4ed0a 100644[m
+Binary files a/obj/Debug/Revit_FunExtension.csprojAssemblyReference.cache and b/obj/Debug/Revit_FunExtension.csprojAssemblyReference.cache differ
+[1mdiff --git a/obj/Debug/Revit_FunExtension.dll b/obj/Debug/Revit_FunExtension.dll[m
+[1mindex 319090e..4681151 100644[m
+Binary files a/obj/Debug/Revit_FunExtension.dll and b/obj/Debug/Revit_FunExtension.dll differ
+[1mdiff --git a/obj/Debug/Revit_FunExtension.pdb b/obj/Debug/Revit_FunExtension.pdb[m
+[1mindex dd4f8a3..3c3180d 100644[m
+Binary files a/obj/Debug/Revit_FunExtension.pdb and b/obj/Debug/Revit_FunExtension.pdb differ
